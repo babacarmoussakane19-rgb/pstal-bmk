@@ -1,0 +1,4 @@
+__pycache__/
+*.pt
+pstal-env/
+*.conllu
