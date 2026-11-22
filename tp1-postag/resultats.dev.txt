@@ -1,3 +1,25 @@
-Predictions file: pred.dev.conllu
-Accuracy on all upos: 93.18 ( 9040/ 9702)
-Accuracy on OOV upos: 62.44 (  552/  884)
+=== TP1 - Étiqueteur POS (GRU) - Résultats sur le corpus dev ===
+
+Corpus
+  train : sequoia-ud.parseme.frsemcor.simple.train (2184 phrases)
+  dev   : sequoia-ud.parseme.frsemcor.simple.dev   (402 phrases, 9702 mots)
+  |Vw| = 8289 mots   |Vt| = 17 étiquettes
+
+Hyper-paramètres
+  d_embed (de)    : 150
+  d_hidden (dh)   : 150
+  GRU             : bidirectionnel, bias=False
+  dropout         : 0.3
+  max_len (L)     : 40
+  batch_size      : 32
+  epochs          : 25
+  optimiseur      : Adam, lr = 0.001
+  seed            : 42
+  nb paramètres   : 1 518 467
+
+Commande d'entraînement
+  python train_postag.py $S.train $S.dev -o model.pt --epochs 25
+
+Évaluation (lib/evaluate.py)
+  Accuracy on all upos: 93.18 ( 9040/ 9702)
+  Accuracy on OOV upos: 62.44 (  552/  884)
