@@ -1,0 +1,3 @@
+Predictions file: pred.dev.conllu
+Accuracy on all upos: 93.18 ( 9040/ 9702)
+Accuracy on OOV upos: 62.44 (  552/  884)
